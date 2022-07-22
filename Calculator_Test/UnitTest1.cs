@@ -27,7 +27,10 @@ namespace Calculator_Test
             Assert.IsNotNull(calc);
         }
 
+
+        //Below given are 10 test methods for addition 
         [TestMethod]
+        //Values are supplied as inputs through datarow
         [DataRow(2, 1, 1)]
         [DataRow(3, 2, 1)]
         [DataRow(5, 3, 2)]
@@ -99,6 +102,8 @@ namespace Calculator_Test
             Assert.AreEqual(expected, calc.Add(left, right));
         }
 
+
+        //10 test methods for subtraction
         [TestMethod]
         [DataRow(2, 3, 1)]
         public void CalculatorCanSubtractTwoPositiveNumbers(double expected, double left, double right)
@@ -169,7 +174,7 @@ namespace Calculator_Test
             Assert.AreEqual(expected, calc.Subtract(left, right));
         }
 
-
+        //10 methods for division
         [TestMethod]
         public void CalculatorThrowsExceptionWhenDividingByZero()
         {
@@ -239,6 +244,7 @@ namespace Calculator_Test
             Assert.AreEqual(expected, calc.Divide(left, right));
         }
 
+        //10 test methods for multiplication
         [TestMethod]
         [DataRow(4, 2, 2)]
         public void CalculatorMultipliesTwoPositiveNumbers(double expected, double left, double right)

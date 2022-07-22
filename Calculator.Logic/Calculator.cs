@@ -4,16 +4,17 @@ namespace Calculator_Logic
 {
     public class Calculator
     {
+        //method for addition
         public double Add(double left, double right)
         {
             return left + right;
         }
-
+        //method for subtraction
         public double Subtract(double left, double right)
         {
             return left - right;
         }
-
+        //method for division
         public double Divide(double left, double right)
         {
             if (right != 0)
@@ -26,7 +27,7 @@ namespace Calculator_Logic
             }
             
         }
-
+        //method for multiplication
         public double Multiply(double left, double right)
         {
             if (right == 0 || left == 0)
