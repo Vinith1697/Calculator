@@ -239,7 +239,75 @@ namespace Calculator_Test
             Assert.AreEqual(expected, calc.Divide(left, right));
         }
 
+        [TestMethod]
+        [DataRow(4, 2, 2)]
+        public void CalculatorMultipliesTwoPositiveNumbers(double expected, double left, double right)
+        {
+            Assert.AreEqual(expected, calc.Multiply(left, right));
+        }
 
+        [TestMethod]
+        [DataRow(4, -2, -2)]
+        public void CalculatorMultipliesTwoNegativeNumbers(double expected, double left, double right)
+        {
+            Assert.AreEqual(expected, calc.Multiply(left, right));
+        }
+
+        [TestMethod]
+        [DataRow(-4, 2, -2)]
+        public void CalculatorMultipliesPositiveNegativeNumbers(double expected, double left, double right)
+        {
+            Assert.AreEqual(expected, calc.Multiply(left, right));
+        }
+
+        [TestMethod]
+        [DataRow(0, 2, 0)]
+        public void CalculatorMultipliesPositiveNumberAndZero(double expected, double left, double right)
+        {
+            Assert.AreEqual(expected, calc.Multiply(left, right));
+        }
+
+        [TestMethod]
+        [DataRow(0, -2, 0)]
+        public void CalculatorMultipliesNegativeNumberAndZero(double expected, double left, double right)
+        {
+            Assert.AreEqual(expected, calc.Multiply(left, right));
+        }
+
+        [TestMethod]
+        [DataRow(6.3, 4.2, 1.5)]
+        public void CalculatorMultipliesTwoPositiveDecimalNumbers(double expected, double left, double right)
+        {
+            Assert.AreEqual(expected, Math.Round(calc.Multiply(left, right)), 1);
+        }
+
+        [TestMethod]
+        [DataRow(6.3, -4.2, -1.5)]
+        public void CalculatorMultipliesTwoNegativeDecimalNumbers(double expected, double left, double right)
+        {
+            Assert.AreEqual(expected, Math.Round(calc.Multiply(left, right)), 1);
+        }
+
+        [TestMethod]
+        [DataRow(-6.3, 4.2, -1.5)]
+        public void CalculatorMultipliesPositiveAndNegativeDecimalNumbers(double expected, double left, double right)
+        {
+            Assert.AreEqual(expected, Math.Round(calc.Multiply(left, right)), 1);
+        }
+
+        [TestMethod]
+        [DataRow(0, 4.2, 0)]
+        public void CalculatorMultipliesPositiveDecimalAndZero(double expected, double left, double right)
+        {
+            Assert.AreEqual(expected, calc.Multiply(left, right));
+        }
+
+        [TestMethod]
+        [DataRow(0, -4.2, 0)]
+        public void CalculatorMultipliesNegativeDecimalAndZero(double expected, double left, double right)
+        {
+            Assert.AreEqual(expected, calc.Multiply(left, right));
+        }
 
 
     }
