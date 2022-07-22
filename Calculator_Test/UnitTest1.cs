@@ -170,6 +170,75 @@ namespace Calculator_Test
         }
 
 
+        [TestMethod]
+        public void CalculatorThrowsExceptionWhenDividingByZero()
+        {
+            Assert.ThrowsException<DivideByZeroException>(() => { calc.Divide(9, 0); });
+        }
+
+        [TestMethod]
+        [DataRow(2, 8, 4)]
+        public void CalculatorDividesTwoPositiveNumbers(double expected, double left, double right)
+        {
+            Assert.AreEqual(expected, calc.Divide(left, right));
+        }
+
+        [TestMethod]
+        [DataRow(2, -8, -4)]
+        public void CalculatorDividesTwoNegativeNumbers(double expected, double left, double right)
+        {
+            Assert.AreEqual(expected, calc.Divide(left, right));
+        }
+
+        [TestMethod]
+        [DataRow(-2, 8, -4)]
+        public void CalculatorDividesPositiveNegativeNumbers(double expected, double left, double right)
+        {
+            Assert.AreEqual(expected, calc.Divide(left, right));
+        }
+
+        [TestMethod]
+        [DataRow(-2, -8, 4)]
+        public void CalculatorDividesNegativePositiveNumbers(double expected, double left, double right)
+        {
+            Assert.AreEqual(expected, calc.Divide(left, right));
+        }
+
+        [TestMethod]
+        [DataRow(0, 0, 4)]
+        public void CalculatorDividesZeroInNumeratorPositiveDenominatorNumbers(double expected, double left, double right)
+        {
+            Assert.AreEqual(expected, calc.Divide(left, right));
+        }
+
+        [TestMethod]
+        [DataRow(0, 0, -4)]
+        public void CalculatorDividesZeroInNumeratorNegativeDenominatorNumbers(double expected, double left, double right)
+        {
+            Assert.AreEqual(expected, calc.Divide(left, right));
+        }
+
+        [TestMethod]
+        [DataRow(2.0, 8.4, 4.2)]
+        public void CalculatorDividesTwoPositiveDecimalNumbers(double expected, double left, double right)
+        {
+            Assert.AreEqual(expected, calc.Divide(left, right));
+        }
+
+        [TestMethod]
+        [DataRow(2.0, -8.4, -4.2)]
+        public void CalculatorDividesTwoNegativeDecimalNumbers(double expected, double left, double right)
+        {
+            Assert.AreEqual(expected, calc.Divide(left, right));
+        }
+
+        [TestMethod]
+        [DataRow(-2.0, 8.4, -4.2)]
+        public void CalculatorDividesPositiveNegativeDecimalNumbers(double expected, double left, double right)
+        {
+            Assert.AreEqual(expected, calc.Divide(left, right));
+        }
+
 
 
 
